@@ -26,7 +26,6 @@ public class IMC extends Application {
 	private TextField altura;
 	
 	private DoubleProperty pesoDP = new SimpleDoubleProperty(), alturaDP = new SimpleDoubleProperty(), resDP = new SimpleDoubleProperty();
-	private StringProperty s = new SimpleStringProperty();
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -46,10 +45,10 @@ public class IMC extends Application {
 		cmLabel = new Label("cm");
 		hbAltura.getChildren().addAll(alturaLabel, altura, cmLabel);
 		
-		s.bind(altura.textProperty());
-		s.addListener((o, ov, nv) -> {
+		altura.textProperty().addListener((o, ov, nv) -> {
 			calcularIMC();
 		});
+		
 		
 		hbIMC = new HBox();
 		hbIMC.setSpacing(5);
