@@ -1,13 +1,8 @@
 package dad;
 
 import javafx.application.Application;
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -49,6 +44,9 @@ public class IMC extends Application {
 			calcularIMC();
 		});
 		
+		peso.textProperty().addListener((o, ov, nv) -> {
+			calcularIMC();
+		});
 		
 		hbIMC = new HBox();
 		hbIMC.setSpacing(5);
